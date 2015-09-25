@@ -3,9 +3,9 @@ Multiplexor m;
 void setup() {
   // put your setup code here, to run once:
   //latch 8
-  //clock 11
-  //data 12
-  m.begin(8, 11, 12);
+  //clock 12
+  //data 11
+  m.begin(8, 12, 11);
 }
 
 void loop() {
