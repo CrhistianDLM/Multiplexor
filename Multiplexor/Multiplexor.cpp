@@ -1,7 +1,7 @@
 #include "Multiplexor.h"
 
 Multiplexor::Multiplexor(){}
-void Multiplexor::writeLeds(int nLeds){
+void Multiplexor::writeLeds_m1(int nLeds){
       
   int leds=0;
   for(int i=0; i< nLeds;i++){
@@ -17,7 +17,24 @@ void Multiplexor::writeLeds(int nLeds){
     digitalWrite(lac, HIGH);
 }
 
-void Multiplexor::writeLeds2(int multiplexor_1,int multiplexor_2){
+void Multiplexor::writeLeds_m2(int nLeds){
+      
+  int leds=0;
+  for(int i=0; i< nLeds;i++){
+      leds+=bits[i];
+  }
+   digitalWrite(lac, LOW);
+    // shift out the bits:
+    // Cambiar los bits:
+    shiftOut(data, clk, MSBFIRST, 0);  
+    shiftOut(data, clk, MSBFIRST, leds);  
+ 
+    //take the latch pin high so the LEDs will light up:
+    // Cambia a la alta el pasador por lo que los LEDs se iluminarán:
+    digitalWrite(lac, HIGH);
+}
+
+void Multiplexor::writeLeds_both(int multiplexor_1,int multiplexor_2){
       
   int leds=0;
   for(int i=0; i< multiplexor_1;i++){

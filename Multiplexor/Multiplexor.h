@@ -11,8 +11,9 @@
 class Multiplexor{
   public:
     Multiplexor();
-    void writeLeds(int);
-    void writeLeds2(int,int);
+    void writeLeds_m1(int);
+    void writeLeds_m2(int);
+    void writeLeds_both(int,int);
     void begin(int, int, int);
     void darPines();
     void apagar();
