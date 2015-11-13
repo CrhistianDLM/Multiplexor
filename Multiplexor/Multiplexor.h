@@ -16,7 +16,8 @@ class Multiplexor{
     void begin(int, int, int);
     void darPines();
     void apagar();
-    void mostrarUno(int);
+    void mostrarUno_en_m1(int);
+    void mostrarUno_en_m2(int);
   //  void mostrarSegundoMult(int);
     
     int darUltimoData1();

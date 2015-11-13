@@ -63,8 +63,15 @@ void Multiplexor::darPines(){
   sprintf(text, "pins: %3d - %3d - %3d", lac, clk, data);
   Serial.println(text);
 }
-void Multiplexor::mostrarUno(int nBit){
+void Multiplexor::mostrarUno_en_m1(int nBit){
     digitalWrite(lac, LOW);
+    shiftOut(data, clk, MSBFIRST, bits[nBit-1]);  
+    digitalWrite(lac, HIGH);
+}
+
+void Multiplexor::mostrarUno_en_m2(int nBit){
+    digitalWrite(lac, LOW);
+    shiftOut(data, clk, MSBFIRST, 0);  
     shiftOut(data, clk, MSBFIRST, bits[nBit-1]);  
     digitalWrite(lac, HIGH);
 }
