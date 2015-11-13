@@ -91,7 +91,9 @@ void Multiplexor::mostrarUno_En_m2(int nBit){
     shiftOut(data, clk, MSBFIRST, 0);  
     shiftOut(data, clk, MSBFIRST, bits[nBit-1]);  
     digitalWrite(lac, HIGH);
-}void Multiplexor::mostrarUno_En_Ambos(int nBitM1, int nBitM2){
+}
+
+void Multiplexor::mostrarUno_En_Ambos(int nBitM1, int nBitM2){
     digitalWrite(lac, LOW);
     shiftOut(data, clk, MSBFIRST, bits[nBitM1-1]);  
     shiftOut(data, clk, MSBFIRST, bits[nBitM2-1]);  
