@@ -17,23 +17,27 @@ void Multiplexor::writeLeds(int nLeds){
     digitalWrite(lac, HIGH);
 }
 
-void Multiplexor::writeLeds2(int nLeds,int nLeds2){
+void Multiplexor::writeLeds2(int multiplexor_1,int multiplexor_2){
       
   int leds=0;
-  for(int i=0; i< nLeds;i++){
+  for(int i=0; i< multiplexor_1;i++){
       leds+=bits[i];
+  }
+  int leds2=0;
+  for(int i=0; i< multiplexor_2;i++){
+      leds2+=bits[i];
   }
   
    digitalWrite(lac, LOW);
     // shift out the bits:
     // Cambiar los bits:
     shiftOut(data, clk, MSBFIRST, leds);  
-    shiftOut(data, clk, MSBFIRST, nLeds2);  
+    shiftOut(data, clk, MSBFIRST, leds2);  
     //take the latch pin high so the LEDs will light up:
     // Cambia a la alta el pasador por lo que los LEDs se iluminarán:
     digitalWrite(lac, HIGH);
-   ultimoData = nLeds;
-   ultimoDataBit = leds;
+   ultimoData = multiplexor_1;
+   ultimoDataBit = multiplexor_2;
 }
 void Multiplexor::apagar(){
   digitalWrite(lac, LOW);
