@@ -19,7 +19,7 @@ class Multiplexor{
     void apagar();
     void mostrarUno_En_m1(int);
     void mostrarUno_En_m2(int);
-    void mostrarUno_En_Ambos(int);
+    void mostrarUno_En_Ambos(int,int);
   //  void mostrarSegundoMult(int);
     
     int darUltimoData1();
