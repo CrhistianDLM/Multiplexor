@@ -11,11 +11,13 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   for(int i = 1; i<9; i++){
-    m.writeLeds(i);
+    //m.writeLeds(i);
+    m.writeLeds_m1(i);
     delay(200);
   }
   for(int i = 8; i>0; i--){
-    m.writeLeds(i);
+    //m.writeLeds(i);
+    m.writeLeds_m1(i);
     delay(200);
   }
 }
