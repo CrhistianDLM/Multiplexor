@@ -1,11 +1,17 @@
-despues de descargar, descomprimir la carpeta llamada Multiplexor. 
+despues de descargar, ir a multiplexor-master
+abren multiplexor-master
+dentro hay una carpeta llamada Multiplexor. la extraen
+descomprimir la carpeta llamada Multiplexor. 
 Una vez descomprimida, ejecutar arduino.
 en el menu ir a: programa ->importar libreria -> añadir libreria.
 buscar la carpeta descomprimida y seleccionarla
 finalmente precionar abrir.
 
 -------------------------------------------------
-After downloading, unzip the folder called Multiplexer.
+After downloading, 
+open multiplexer-master
+inside there is a folder called Multiplexer. the extract
+unzip the folder called Multiplexer.
 Once unzipped, run arduino.
 in the menu go to: Program -> Import library -> add library.
 search for and select the unzipped folder
