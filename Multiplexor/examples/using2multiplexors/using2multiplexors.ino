@@ -1,3 +1,18 @@
+//writeLeds_m1(int);
+//writeLeds_m2(int);
+//writeLeds_both(int,int);
+//begin(int, int, int);
+//darPines();
+//apagar();
+//mostrarUno_En_m1(int);
+//mostrarUno_En_m2(int);
+//mostrarUno_En_Ambos(int,int);
+//write_byte_m1(int);
+//write_byte_m2(int);
+//write_byte_Ambos(int,int); 
+//mostrarSegundoMult(int);
+//darUltimoData1();
+//darUltimoDataBit1();
 #include <Multiplexor.h>
 Multiplexor m;
 void setup() {

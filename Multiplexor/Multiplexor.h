@@ -20,6 +20,9 @@ class Multiplexor{
     void mostrarUno_En_m1(int);
     void mostrarUno_En_m2(int);
     void mostrarUno_En_Ambos(int,int);
+    void write_byte_m1(int);
+    void write_byte_m2(int);
+    void write_byte_Ambos(int,int);
   //  void mostrarSegundoMult(int);
     
     int darUltimoData1();

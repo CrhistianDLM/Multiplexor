@@ -10,6 +10,7 @@ void Multiplexor::writeLeds_m1(int nLeds){
    digitalWrite(lac, LOW);
     // shift out the bits:
     // Cambiar los bits:
+    shiftOut(data, clk, MSBFIRST, 0);  
     shiftOut(data, clk, MSBFIRST, leds);  
  
     //take the latch pin high so the LEDs will light up:
@@ -26,8 +27,8 @@ void Multiplexor::writeLeds_m2(int nLeds){
    digitalWrite(lac, LOW);
     // shift out the bits:
     // Cambiar los bits:
-    shiftOut(data, clk, MSBFIRST, 0);  
     shiftOut(data, clk, MSBFIRST, leds);  
+    shiftOut(data, clk, MSBFIRST, 0);  
  
     //take the latch pin high so the LEDs will light up:
     // Cambia a la alta el pasador por lo que los LEDs se iluminarán:
@@ -48,8 +49,8 @@ void Multiplexor::writeLeds_both(int multiplexor_1,int multiplexor_2){
    digitalWrite(lac, LOW);
     // shift out the bits:
     // Cambiar los bits:
-    shiftOut(data, clk, MSBFIRST, leds);  
     shiftOut(data, clk, MSBFIRST, leds2);  
+    shiftOut(data, clk, MSBFIRST, leds);  
     //take the latch pin high so the LEDs will light up:
     // Cambia a la alta el pasador por lo que los LEDs se iluminarán:
     digitalWrite(lac, HIGH);
@@ -82,21 +83,42 @@ void Multiplexor::darPines(){
 }
 void Multiplexor::mostrarUno_En_m1(int nBit){
     digitalWrite(lac, LOW);
+    shiftOut(data, clk, MSBFIRST, 0); 
     shiftOut(data, clk, MSBFIRST, bits[nBit-1]);  
     digitalWrite(lac, HIGH);
 }
 
 void Multiplexor::mostrarUno_En_m2(int nBit){
     digitalWrite(lac, LOW);
-    shiftOut(data, clk, MSBFIRST, 0);  
     shiftOut(data, clk, MSBFIRST, bits[nBit-1]);  
+    shiftOut(data, clk, MSBFIRST, 0);  
     digitalWrite(lac, HIGH);
 }
 
 void Multiplexor::mostrarUno_En_Ambos(int nBitM1, int nBitM2){
     digitalWrite(lac, LOW);
-    shiftOut(data, clk, MSBFIRST, bits[nBitM1-1]);  
     shiftOut(data, clk, MSBFIRST, bits[nBitM2-1]);  
+    shiftOut(data, clk, MSBFIRST, bits[nBitM1-1]);  
+    digitalWrite(lac, HIGH);
+}
+void Multiplexor::write_byte_m1(int nBit){
+    digitalWrite(lac, LOW);
+    shiftOut(data, clk, MSBFIRST, 0);  
+    shiftOut(data, clk, MSBFIRST, nBit);      
+
+    digitalWrite(lac, HIGH);
+}
+void Multiplexor::write_byte_m2(int nBit){
+    digitalWrite(lac, LOW);
+    shiftOut(data, clk, MSBFIRST, nBit);  
+    shiftOut(data, clk, MSBFIRST, 0);  
+    digitalWrite(lac, HIGH);
+}
+
+void Multiplexor::write_byte_Ambos(int nBitM1, int nBitM2){
+    digitalWrite(lac, LOW);
+    shiftOut(data, clk, MSBFIRST, nBitM2);  
+    shiftOut(data, clk, MSBFIRST, nBitM1);  
     digitalWrite(lac, HIGH);
 }
 //void Multiplexor::mostrarSegundoMult(int nBit){}
